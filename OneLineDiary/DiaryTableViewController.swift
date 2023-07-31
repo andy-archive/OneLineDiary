@@ -29,6 +29,18 @@ class DiaryTableViewController: UITableViewController {
         tableView.rowHeight = UITableView.automaticDimension
 
     }
+    
+    @IBAction func searchButtonClicked(_ sender: UIBarButtonItem) {
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        
+        guard let vc = sb.instantiateViewController(withIdentifier: "SearchCollectionViewController") as? SearchCollectionViewController else {
+            print("ERROR")
+            return
+        }
+        
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
 
     @IBAction func addButtonClicked(_ sender: UIBarButtonItem) {
         ///1. Storyboard 파일 찾기
@@ -99,6 +111,13 @@ class DiaryTableViewController: UITableViewController {
             print("ERROR")
             return
         }
+        
+        // Pass Data 2. vc가 갖고 있는 프로퍼티에 데이터를 추가
+        vc.contents = list[indexPath.row]
+        
+        // (주의!) contentsLabel보다 navigationController가 먼저여서 @IBOutlet를 활용할 수 없다!
+        // vc.contentsLabel.text = list[indexPath.row]
+        /// Thread 1: Fatal error: Unexpectedly found nil while implicitly unwrapping an Optional value
         
         // ⭐️ Interface Builder에 Navigation Controller가 imbedded 되어야만 push가 동작한다!
         navigationController?.pushViewController(vc, animated: true)
