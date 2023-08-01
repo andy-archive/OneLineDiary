@@ -8,6 +8,8 @@
 import UIKit
 
 class DiaryTableViewCell: UITableViewCell {
+    
+    static let identifier = "DiaryTableViewCell"
 
     @IBOutlet var backView: UIView!
     @IBOutlet var contentLabel: UILabel!

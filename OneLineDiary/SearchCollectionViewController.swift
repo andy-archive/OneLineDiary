@@ -9,12 +9,14 @@ import UIKit
 
 class SearchCollectionViewController: UICollectionViewController {
 
+    static let identifier = "SearchCollectionViewController"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let nib = UINib(nibName: "SearchCollectionViewCell", bundle: nil)
+        let nib = UINib(nibName: SearchCollectionViewCell.identifier, bundle: nil)
 
-        collectionView.register(nib, forCellWithReuseIdentifier: "SearchCollectionViewCell")
+        collectionView.register(nib, forCellWithReuseIdentifier: SearchCollectionViewCell.identifier)
         
         setCollectionViewLayout()
     }
@@ -39,7 +41,7 @@ class SearchCollectionViewController: UICollectionViewController {
     
     //2.
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SearchCollectionViewCell", for: indexPath) as? SearchCollectionViewCell else {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SearchCollectionViewCell.identifier, for: indexPath) as? SearchCollectionViewCell else {
             print("ERROR")
             return UICollectionViewCell()
         }

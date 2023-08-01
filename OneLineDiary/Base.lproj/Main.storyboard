@@ -39,7 +39,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Hr-51-88A" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2611" y="-2"/>
+            <point key="canvasLocation" x="2610" y="-2"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="szD-OR-5xK">
@@ -90,7 +90,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dnV-44-laK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1798" y="727"/>
+            <point key="canvasLocation" x="1798" y="-713"/>
         </scene>
         <!--Search Collection View Controller-->
         <scene sceneID="mnI-Qi-Pjm">
@@ -126,7 +126,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Yp-JF-AZq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2610" y="718"/>
+            <point key="canvasLocation" x="1798" y="708"/>
         </scene>
         <!--Diary Table View Controller-->
         <scene sceneID="RxN-gV-3Ce">

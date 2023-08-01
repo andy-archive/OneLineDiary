@@ -17,8 +17,8 @@ class DiaryTableViewController: UITableViewController {
         setBackgroundColor()
         
         //XIB 테이블셀을 생성할 경우, 테이블 뷰에 사용할 셀을 등록해주는 과정이 필요하다
-        let nib = UINib(nibName: "DiaryTableViewCell", bundle: nil)
-        tableView.register(nib, forCellReuseIdentifier: "DiaryTableViewCell")
+        let nib = UINib(nibName: DiaryTableViewCell.identifier, bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: DiaryTableViewCell.identifier)
         
         // tableView.backgroundColor = .clear
         
@@ -31,9 +31,7 @@ class DiaryTableViewController: UITableViewController {
     }
     
     @IBAction func searchButtonClicked(_ sender: UIBarButtonItem) {
-        let sb = UIStoryboard(name: "Main", bundle: nil)
-        
-        guard let vc = sb.instantiateViewController(withIdentifier: "SearchCollectionViewController") as? SearchCollectionViewController else {
+        guard let vc = storyboard?.instantiateViewController(withIdentifier: SearchCollectionViewController.identifier) as? SearchCollectionViewController else {
             print("ERROR")
             return
         }
@@ -44,10 +42,10 @@ class DiaryTableViewController: UITableViewController {
 
     @IBAction func addButtonClicked(_ sender: UIBarButtonItem) {
         ///1. Storyboard 파일 찾기
-        let sb = UIStoryboard(name: "Main", bundle: nil)
+        //let sb = UIStoryboard(name: "Main", bundle: nil)
         
         ///2. Storyboard 파일 안의 ViewController 찾기
-        guard let vc = sb.instantiateViewController(withIdentifier: "AddViewController") as? AddViewController else {
+        guard let vc = storyboard?.instantiateViewController(withIdentifier: AddViewController.identifier) as? AddViewController else {
             print("ERROR")
             return
         }
@@ -71,7 +69,7 @@ class DiaryTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "DiaryTableViewCell") as? DiaryTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: DiaryTableViewCell.identifier) as? DiaryTableViewCell else {
             print("ERROR")
             return UITableViewCell()
         }
@@ -105,9 +103,7 @@ class DiaryTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let sb = UIStoryboard(name: "Main", bundle: nil)
-        
-        guard let vc = sb.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController else {
+        guard let vc = storyboard?.instantiateViewController(withIdentifier: DetailViewController.identifier) as? DetailViewController else {
             print("ERROR")
             return
         }

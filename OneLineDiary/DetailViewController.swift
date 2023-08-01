@@ -9,6 +9,8 @@ import UIKit
 
 class DetailViewController: UIViewController {
     
+    static let identifier = "DetailViewController"
+    
     @IBOutlet weak var contentsLabel: UILabel!
     
     // Pass Data 1. 데이터를 받을 공간(프로퍼티) 생성
