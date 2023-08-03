@@ -80,21 +80,61 @@
 				3894BFDA2A773A5C00680C90 /* SceneDelegate.swift */,
 				3894BFDC2A773A5C00680C90 /* AddViewController.swift */,
 				3894BFDE2A773A5C00680C90 /* Main.storyboard */,
-				38BE70A72A79F2350040D0E9 /* TimelineViewController.swift */,
-				38B35B5A2A789B5700E28690 /* SettingTableViewController.swift */,
-				3894BFF82A777ADC00680C90 /* SearchCollectionViewCell.swift */,
-				3894BFF92A777ADC00680C90 /* SearchCollectionViewCell.xib */,
-				3894BFF62A77796500680C90 /* SearchCollectionViewController.swift */,
+				38BE70D52A7B2F8C0040D0E9 /* TImelineView */,
+				38BE70D62A7B2F9A0040D0E9 /* SettingView */,
+				38BE70D22A7B2E3F0040D0E9 /* SearchView */,
 				3894BFF22A7752B500680C90 /* DetailViewController.swift */,
-				3894BFEE2A773BC300680C90 /* DiaryTableViewCell.swift */,
-				3894BFEF2A773BC300680C90 /* DiaryTableViewCell.xib */,
-				3894BFEC2A773AD500680C90 /* DiaryTableViewController.swift */,
-				3894BFF42A77625900680C90 /* Extension+UIViewController.swift */,
+				38BE70D32A7B2E4C0040D0E9 /* DiaryView */,
+				38BE70D42A7B2E620040D0E9 /* Extensions */,
 				3894BFE12A773A5D00680C90 /* Assets.xcassets */,
 				3894BFE32A773A5D00680C90 /* LaunchScreen.storyboard */,
 				3894BFE62A773A5D00680C90 /* Info.plist */,
 			);
 			path = OneLineDiary;
+			sourceTree = "<group>";
+		};
+		38BE70D22A7B2E3F0040D0E9 /* SearchView */ = {
+			isa = PBXGroup;
+			children = (
+				3894BFF82A777ADC00680C90 /* SearchCollectionViewCell.swift */,
+				3894BFF92A777ADC00680C90 /* SearchCollectionViewCell.xib */,
+				3894BFF62A77796500680C90 /* SearchCollectionViewController.swift */,
+			);
+			path = SearchView;
+			sourceTree = "<group>";
+		};
+		38BE70D32A7B2E4C0040D0E9 /* DiaryView */ = {
+			isa = PBXGroup;
+			children = (
+				3894BFEE2A773BC300680C90 /* DiaryTableViewCell.swift */,
+				3894BFEF2A773BC300680C90 /* DiaryTableViewCell.xib */,
+				3894BFEC2A773AD500680C90 /* DiaryTableViewController.swift */,
+			);
+			path = DiaryView;
+			sourceTree = "<group>";
+		};
+		38BE70D42A7B2E620040D0E9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3894BFF42A77625900680C90 /* Extension+UIViewController.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		38BE70D52A7B2F8C0040D0E9 /* TImelineView */ = {
+			isa = PBXGroup;
+			children = (
+				38BE70A72A79F2350040D0E9 /* TimelineViewController.swift */,
+			);
+			path = TImelineView;
+			sourceTree = "<group>";
+		};
+		38BE70D62A7B2F9A0040D0E9 /* SettingView */ = {
+			isa = PBXGroup;
+			children = (
+				38B35B5A2A789B5700E28690 /* SettingTableViewController.swift */,
+			);
+			path = SettingView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
