@@ -26,11 +26,18 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bb8-V8-EKl">
+                                <rect key="frame" x="180.66666666666666" y="409" width="32" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="VF8-eK-pAf"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Bb8-V8-EKl" firstAttribute="centerY" secondItem="Q8K-wl-Cmb" secondAttribute="centerY" id="34y-kR-J4l"/>
                             <constraint firstItem="VF8-eK-pAf" firstAttribute="bottom" secondItem="OHW-6a-6UI" secondAttribute="bottom" constant="30" id="FJj-Ng-hSu"/>
+                            <constraint firstItem="Bb8-V8-EKl" firstAttribute="centerX" secondItem="Q8K-wl-Cmb" secondAttribute="centerX" id="PTE-Mw-Onx"/>
                             <constraint firstItem="OHW-6a-6UI" firstAttribute="top" secondItem="VF8-eK-pAf" secondAttribute="top" constant="30" id="aGU-Pl-zfi"/>
                             <constraint firstItem="VF8-eK-pAf" firstAttribute="trailing" secondItem="OHW-6a-6UI" secondAttribute="trailing" constant="30" id="rYP-Lw-dpX"/>
                             <constraint firstItem="OHW-6a-6UI" firstAttribute="leading" secondItem="VF8-eK-pAf" secondAttribute="leading" constant="30" id="s2M-g9-QYE"/>
@@ -181,7 +188,37 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dnV-44-laK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1798" y="-713"/>
+            <point key="canvasLocation" x="1798" y="-685"/>
+        </scene>
+        <!--Lotto View Controller-->
+        <scene sceneID="OF3-vD-iGa">
+            <objects>
+                <viewController id="6XY-YG-BHh" customClass="LottoViewController" customModule="OneLineDiary" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8Hi-eG-g6T">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JSj-6y-SLJ">
+                                <rect key="frame" x="20" y="129" width="353" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="nGr-67-1JT"/>
+                        <color key="backgroundColor" white="1" alpha="0.33000000000000002" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="nGr-67-1JT" firstAttribute="trailing" secondItem="JSj-6y-SLJ" secondAttribute="trailing" constant="20" id="HtK-dl-S4V"/>
+                            <constraint firstItem="JSj-6y-SLJ" firstAttribute="leading" secondItem="nGr-67-1JT" secondAttribute="leading" constant="20" id="LOS-SY-HYy"/>
+                            <constraint firstItem="JSj-6y-SLJ" firstAttribute="top" secondItem="nGr-67-1JT" secondAttribute="top" constant="70" id="YLW-St-LFo"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="numberTextField" destination="JSj-6y-SLJ" id="Xt8-Vq-bCL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fqL-sR-gZh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2594" y="-685"/>
         </scene>
         <!--Search Collection View Controller-->
         <scene sceneID="mnI-Qi-Pjm">
