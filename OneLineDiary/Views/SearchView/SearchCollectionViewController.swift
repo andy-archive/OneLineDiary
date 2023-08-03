@@ -11,8 +11,17 @@ class SearchCollectionViewController: UICollectionViewController {
 
     static let identifier = "SearchCollectionViewController"
     
+    let searchBar = UISearchBar()
+    let appleProductList = ["iPhone", "iPad", "Apple Watch", "Apple Vision Pro", "MacBook", "Mac mini", "사자", "사과"]
+    var searchList = [String]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        searchBar.delegate = self
+        searchBar.placeholder = "검색어를 입력하세요"
+        searchBar.showsCancelButton = true
+        navigationItem.titleView = searchBar
         
         let nib = UINib(nibName: SearchCollectionViewCell.identifier, bundle: nil)
 
@@ -36,7 +45,7 @@ class SearchCollectionViewController: UICollectionViewController {
     
     //1.
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 100
+        return searchList.count
     }
     
     //2.
@@ -47,9 +56,50 @@ class SearchCollectionViewController: UICollectionViewController {
         }
         
         cell.backgroundColor = .systemGray4
-        cell.contentsLabel.text = "\(indexPath)"
+        cell.contentsLabel.text = searchList[indexPath.row]
         
         return cell
     }
 
+}
+
+extension SearchCollectionViewController: UISearchBarDelegate {
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        
+        guard let word = searchBar.text else { return }
+        
+        searchList.removeAll()
+        
+        for item in appleProductList {
+            if item.contains(word) {
+                searchList.append(item)
+                print(searchList)
+            }
+        }
+        
+        collectionView.reloadData()
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchList.removeAll()
+        searchBar.text = ""
+        collectionView.reloadData()
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        guard let word = searchBar.text else { return }
+        
+        searchList.removeAll()
+        
+        for item in appleProductList {
+            if item.contains(word) {
+                searchList.append(item)
+                print(searchList)
+            }
+        }
+        
+        collectionView.reloadData()
+    }
 }
