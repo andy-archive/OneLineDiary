@@ -50,6 +50,8 @@ class DiaryTableViewController: UITableViewController {
             return
         }
         
+        vc.type = .add
+        
         /// 2-1 Navigation Controller가 있는 형태로 present 하고 싶은 경우
         /// nav를 사용하면 present와 화면 전환 방식도 nav로 수정해주어야 한다
         let nav = UINavigationController(rootViewController: vc)
@@ -103,15 +105,19 @@ class DiaryTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        guard let vc = storyboard?.instantiateViewController(withIdentifier: DetailViewController.identifier) as? DetailViewController else {
+        guard let vc = storyboard?.instantiateViewController(withIdentifier: AddViewController.identifier) as? AddViewController else {
             print("ERROR")
             return
         }
         
-        // Pass Data 2. vc가 갖고 있는 프로퍼티에 데이터를 추가
-        vc.contents = list[indexPath.row]
+        vc.type = .edit
+        vc.contents = list[indexPath.row] // (주의!) 값 전달 시 아웃렛을 활용할 수 없다
         
-        // (주의!) contentsLabel보다 navigationController가 먼저여서 @IBOutlet를 활용할 수 없다!
+        // Pass Data 2. vc가 갖고 있는 프로퍼티에 데이터를 추가
+//        vc.contents = list[indexPath.row]
+        
+        /// (주의!) 값 전달 시 아웃렛을 활용할 수 없다
+        ///contentsLabel보다 navigationController가 먼저여서 @IBOutlet를 활용할 수 없다!
         // vc.contentsLabel.text = list[indexPath.row]
         /// Thread 1: Fatal error: Unexpectedly found nil while implicitly unwrapping an Optional value
         
